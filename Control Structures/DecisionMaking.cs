@@ -6,7 +6,7 @@ namespace DecisionMaking
     
     class DecisionMaking{
         
-         public void result(int val){
+         public void Ifelsetesting(int val){
            
             if((val>=0)&&(val<=10)){
                    Console.Write("Your Value is present inbetween 0 to 10 Right?");
@@ -33,15 +33,40 @@ namespace DecisionMaking
                 Console.Write("Please Enter the correct range of value");
             }
         }
+
+        public void Switchtesting(int val){
+            switch(val){
+                case 10:
+                Console.Write("You Enter value is between 1 to 20");
+                break;
+                case 20:
+                Console.Write("You Entered Value is between 21 to 50");
+                break;
+                default:
+                Console.Write("Please Enter the positive values between 1 to 50");
+                break;
+            }
+        }
         public static void Main(string[] args){
             DecisionMaking d= new DecisionMaking();
 
-            string userInput;
-            int value;
+            string userInput,methodVal;
+            int value,methodVal1;
              Console.WriteLine("Enter any Interger value between 0 to 50:");
              userInput=Console.ReadLine();
              value=Convert.ToInt32(userInput);
-             d.result(value);
+
+             Console.Write("Which method do you going to follow? 1.if else 2.Switch Case");
+             methodVal=Console.ReadLine();
+             methodVal1=Convert.ToInt32(methodVal);
+
+             if(methodVal1==1){
+                  d.Ifelsetesting(value);
+             }
+             else{
+                 d.Switchtesting(value);
+             }
+            
              
     }
      
